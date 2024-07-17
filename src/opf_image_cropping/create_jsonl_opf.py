@@ -9,7 +9,7 @@ def create_jsonl(csv_file, jsonl_files, group_num):
 
     with open(csv_file, newline='', encoding='utf-8') as csvfile:
         reader = csv.reader(csvfile)
-        next(reader)  
+        next(reader)
         for row in reader:
             char = row[0]
             reference = json.loads(row[4])
@@ -49,7 +49,7 @@ def write_jsonl(entries, file_path):
             f.write('\n')
 
 
-if __name__ == "__main__":
+def main():
     csv_file_path = '../../data/mapping_csv/derge_char_mapping.csv'
     jsonl_file_paths = [
         '../../data/output_jsonl/derge_opf_ga.jsonl',
@@ -58,3 +58,7 @@ if __name__ == "__main__":
     group_num = 2
 
     create_jsonl(csv_file_path, jsonl_file_paths, group_num)
+
+
+if __name__ == "__main__":
+    main()
