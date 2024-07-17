@@ -16,13 +16,13 @@ def create_jsonl(csv_file, jsonl_ga, jsonl_gb):
 
             for image_name, lines in reference.items():
                 image_name_without_ext = image_name.split('.')[0]
-                image_url = f"glyph/glyph-source-images/derge/{image_name_without_ext}.tif"
+                image_url = f"glyph/glyph-source-images/derge/{image_name_without_ext}.jpg"
                 line_info.extend(line[1] for line in lines)
 
             if char not in unique_characters:
                 unique_characters.add(char)
                 jsonl_entry = {
-                    "id": f"{char}.tif",
+                    "id": f"{char}.jpg",
                     "image_url": image_url,
                     "text": char,
                     "line_info": line_info
