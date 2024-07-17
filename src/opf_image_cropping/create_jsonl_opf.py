@@ -1,6 +1,6 @@
 import csv
 import json
-
+import os
 
 def create_jsonl(csv_file, jsonl_ga, jsonl_gb):
     unique_characters = set()
@@ -8,14 +8,15 @@ def create_jsonl(csv_file, jsonl_ga, jsonl_gb):
 
     with open(csv_file, newline='', encoding='utf-8') as csvfile:
         reader = csv.reader(csvfile)
-        next(reader)
+        next(reader)  # Skip the header row
         for row in reader:
             char = row[0]
             reference = json.loads(row[4])
             line_info = []
+            image_url = ""
 
             for image_name, lines in reference.items():
-                image_name_without_ext = image_name.split('.')[0]
+                image_name_without_ext = os.path.splitext(image_name)[0]
                 image_url = f"glyph/glyph-source-images/derge/{image_name_without_ext}.jpg"
                 line_info.extend(line[1] for line in lines)
 
@@ -31,19 +32,21 @@ def create_jsonl(csv_file, jsonl_ga, jsonl_gb):
 
     split_point = len(jsonl_entries) // 2
 
-    with open(jsonl_ga, 'w', encoding='utf-8') as f1:
-        for entry in jsonl_entries[:split_point]:
-            json.dump(entry, f1, ensure_ascii=False)
-            f1.write('\n')
+    def write_jsonl(entries, file_path):
+        try:
+            with open(file_path, 'w', encoding='utf-8') as f:
+                for entry in entries:
+                    json.dump(entry, f, ensure_ascii=False)
+                    f.write('\n')
+        except IOError as e:
+            print(f"Error writing to file {file_path}: {e}")
 
-    with open(jsonl_gb, 'w', encoding='utf-8') as f2:
-        for entry in jsonl_entries[split_point:]:
-            json.dump(entry, f2, ensure_ascii=False)
-            f2.write('\n')
+    write_jsonl(jsonl_entries[:split_point], jsonl_ga)
+    write_jsonl(jsonl_entries[split_point:], jsonl_gb)
 
+if __name__ == "__main__":
+    csv_file_path = '../../data/mapping_csv/derge_char_mapping.csv'
+    jsonl_file_ga_path = '../../data/output_jsonl/derge_opf_ga.jsonl'
+    jsonl_file_gb_path = '../../data/output_jsonl/derge_opf_gb.jsonl'
 
-csv_file_path = '../../data/mapping_csv/derge_char_mapping.csv'
-jsonl_file_ga_path = '../../data/output_jsonl/derge_opf_ga.jsonl'
-jsonl_file_gb_path = '../../data/output_jsonl/derge_opf_gb.jsonl'
-
-create_jsonl(csv_file_path, jsonl_file_ga_path, jsonl_file_gb_path)
+    create_jsonl(csv_file_path, jsonl_file_ga_path, jsonl_file_gb_path)
