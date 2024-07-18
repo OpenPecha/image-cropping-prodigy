@@ -8,7 +8,7 @@ version = "0.0.1"
 authors = [
   { name="OpenPecha", email="dev@openpecha.org" },
 ]
-description = "A small example package"
+description = "This is a data creation tool for Prodigy image cropping service"
 readme = "README.md"
 requires-python = ">=3.8"
 classifiers = [

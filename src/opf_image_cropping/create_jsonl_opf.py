@@ -50,12 +50,11 @@ def write_jsonl(entries, file_path):
 
 
 def main():
-    csv_file_path = '../../data/mapping_csv/derge_char_mapping.csv'
+    csv_file_path = '../../data/mapping_csv/derge_ocr_char_mapping.csv'
     jsonl_file_paths = [
-        '../../data/output_jsonl/derge_opf_ga.jsonl',
         '../../data/output_jsonl/derge_opf_gb.jsonl'
     ]
-    group_num = 2
+    group_num = 1
 
     create_jsonl(csv_file_path, jsonl_file_paths, group_num)
 
