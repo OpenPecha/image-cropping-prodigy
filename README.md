@@ -7,11 +7,14 @@
 
 <!-- Replace with 1-sentence description about what this tool is or does.-->
 
-<h3 align="center">Use this repo template for all new Python projects.</h3>
+<h3 align="center">Data creation for Prodigy image cropping service</h3>
 
 ## Description
 
-Project description goes here.
+- This is a tool to create JSONL data for Prodigy by parsing the line information mapping of OPF text.
+- The OPF text are parsed to find the occurance of the tibetan characters,and using pagination layer annotation,
+we find the image and the line information for the tibetan character and save it as a CSV.
+- We use the CSV to create a jsonl file for loading into Prodigy image croppping service.
 
 ## Project owner(s)
 
