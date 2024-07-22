@@ -40,13 +40,13 @@ class TestCreateJsonl(unittest.TestCase):
         expected_entries_part1 = [
             {
                 "id": "ཀ.jpg",
-                "image_url": "glyph/glyph-source-images/derge/image1.jpg",
+                "image": "glyph/glyph-source-images/derge/image1.jpg",
                 "text": "ཀ",
                 "line_info": [1, 2]
             },
             {
                 "id": "ཁ.jpg",
-                "image_url": "glyph/glyph-source-images/derge/image2.jpg",
+                "image": "glyph/glyph-source-images/derge/image2.jpg",
                 "text": "ཁ",
                 "line_info": [1, 2]
             }
@@ -54,13 +54,13 @@ class TestCreateJsonl(unittest.TestCase):
         expected_entries_part2 = [
             {
                 "id": "ག.jpg",
-                "image_url": "glyph/glyph-source-images/derge/image3.jpg",
+                "image": "glyph/glyph-source-images/derge/image3.jpg",
                 "text": "ག",
                 "line_info": [1, 2]
             },
             {
                 "id": "ང.jpg",
-                "image_url": "glyph/glyph-source-images/derge/image4.jpg",
+                "image": "glyph/glyph-source-images/derge/image4.jpg",
                 "text": "ང",
                 "line_info": [1, 2]
             }
