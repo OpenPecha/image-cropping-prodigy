@@ -8,7 +8,6 @@ def crop_image(image_url, json_data, save_path):
     id_from_json = json_data['id']
     save_filename = os.path.join(save_path, f"{id_from_json}")
 
-    # Check if the file already exists
     if os.path.exists(save_filename):
         print(f"Skipping {id_from_json} because it is already processed.")
         return
