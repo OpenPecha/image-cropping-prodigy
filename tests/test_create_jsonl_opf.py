@@ -41,13 +41,11 @@ class TestCreateJsonl(unittest.TestCase):
             {
                 "id": "ཀ.jpg",
                 "image": "glyph/glyph-source-images/derge/image1.jpg",
-                "image": "glyph/glyph-source-images/derge/image1.jpg",
                 "text": "ཀ",
                 "line_info": [1, 2]
             },
             {
                 "id": "ཁ.jpg",
-                "image": "glyph/glyph-source-images/derge/image2.jpg",
                 "image": "glyph/glyph-source-images/derge/image2.jpg",
                 "text": "ཁ",
                 "line_info": [1, 2]
@@ -57,13 +55,11 @@ class TestCreateJsonl(unittest.TestCase):
             {
                 "id": "ག.jpg",
                 "image": "glyph/glyph-source-images/derge/image3.jpg",
-                "image": "glyph/glyph-source-images/derge/image3.jpg",
                 "text": "ག",
                 "line_info": [1, 2]
             },
             {
                 "id": "ང.jpg",
-                "image": "glyph/glyph-source-images/derge/image4.jpg",
                 "image": "glyph/glyph-source-images/derge/image4.jpg",
                 "text": "ང",
                 "line_info": [1, 2]
@@ -74,4 +70,4 @@ class TestCreateJsonl(unittest.TestCase):
         self.assertEqual(part2_entries, expected_entries_part2)
 
 if __name__ == "__main__":
-    unittest.main
+    unittest.main()
