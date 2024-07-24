@@ -25,7 +25,7 @@ def create_jsonl(csv_file, jsonl_files, group_num):
                 unique_characters.add(char)
                 jsonl_entry = {
                     "id": f"{char}.jpg",
-                    "image_url": image_url,
+                    "image": image_url,
                     "text": char,
                     "line_info": line_info
                 }
@@ -50,7 +50,7 @@ def write_jsonl(entries, file_path):
 
 
 def main():
-    csv_file_path = '../../data/mapping_csv/derge_ocr_char_mapping.csv'
+    csv_file_path = '../../data/mapping_csv/derge_transcribed_char_mapping.csv'
     jsonl_file_paths = [
         '../../data/output_jsonl/derge_opf_gb.jsonl'
     ]
