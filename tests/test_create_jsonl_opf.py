@@ -74,5 +74,4 @@ class TestCreateJsonl(unittest.TestCase):
         self.assertEqual(part2_entries, expected_entries_part2)
 
 if __name__ == "__main__":
-
-    unittest.main()
+    unittest.main
